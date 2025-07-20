@@ -110,4 +110,16 @@ dependencies {
     // JUnit Platform
     testImplementation("org.junit.platform:junit-platform-suite:1.9.3")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
+    testImplementation ("junit:junit:4.13.2")
+    testImplementation ("androidx.test.ext:junit:1.1.5")
+
+    // Android Test dependencies
+    testImplementation ("androidx.test.ext:junit:1.1.5")
+    testImplementation ("androidx.test:runner:1.5.2")
+    testImplementation ("androidx.test:rules:1.5.0")
+    testImplementation ("androidx.test.espresso:espresso-core:3.5.1")
+
+    // Appium dependencies
+    testImplementation("io.appium:java-client:8.5.1")
+    testImplementation("org.seleniumhq.selenium:selenium-java:4.9.1")
 }
