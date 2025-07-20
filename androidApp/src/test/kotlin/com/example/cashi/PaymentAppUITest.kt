@@ -38,14 +38,16 @@ class PaymentAppUITest {
     fun testSendPaymentFlow() {
         val sendPaymentTab = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Send Payment\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Send Payment\")"))
             )
         )
         sendPaymentTab.click()
 
         val emailField = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Recipient Email\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Recipient Email\")"))
             )
         )
         emailField.click()
@@ -53,7 +55,8 @@ class PaymentAppUITest {
 
         val amountField = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Amount\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Amount\")"))
             )
         )
         amountField.click()
@@ -61,35 +64,40 @@ class PaymentAppUITest {
 
         val currencyField = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Currency\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Currency\")"))
             )
         )
         currencyField.click()
 
         val usdOption = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"USD ($)\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"USD ($)\")"))
             )
         )
         usdOption.click()
 
         val sendButton = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Send Payment\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Send Payment\")"))
             )
         )
         sendButton.click()
 
         val historyTab = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Transaction History\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Transaction History\")"))
             )
         )
         historyTab.click()
 
         val transactionItem = wait.until(
             ExpectedConditions.visibilityOf(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"test@example.com\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"test@example.com\")"))
             )
         )
         assertTrue("Transaction should appear in history", transactionItem.isDisplayed)
@@ -99,21 +107,24 @@ class PaymentAppUITest {
     fun testValidationErrors() {
         val sendPaymentTab = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Send Payment\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Send Payment\")"))
             )
         )
         sendPaymentTab.click()
 
         val sendButton = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Send Payment\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Send Payment\")"))
             )
         )
         sendButton.click()
 
         val errorMessage = wait.until(
             ExpectedConditions.visibilityOf(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Invalid email\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().textContains(\"Invalid email\")"))
             )
         )
         assertTrue("Error message should be displayed", errorMessage.isDisplayed)
@@ -123,14 +134,16 @@ class PaymentAppUITest {
     fun testInvalidEmailValidation() {
         val sendPaymentTab = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Send Payment\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Send Payment\")"))
             )
         )
         sendPaymentTab.click()
 
         val emailField = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Recipient Email\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Recipient Email\")"))
             )
         )
         emailField.click()
@@ -138,7 +151,8 @@ class PaymentAppUITest {
 
         val amountField = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Amount\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Amount\")"))
             )
         )
         amountField.click()
@@ -146,14 +160,16 @@ class PaymentAppUITest {
 
         val sendButton = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Send Payment\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Send Payment\")"))
             )
         )
         sendButton.click()
 
         val emailError = wait.until(
             ExpectedConditions.visibilityOf(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Invalid email format\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().textContains(\"Invalid email format\")"))
             )
         )
         assertTrue("Email validation error should be displayed", emailError.isDisplayed)
@@ -163,14 +179,16 @@ class PaymentAppUITest {
     fun testInvalidAmountValidation() {
         val sendPaymentTab = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Send Payment\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Send Payment\")"))
             )
         )
         sendPaymentTab.click()
 
         val emailField = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Recipient Email\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Recipient Email\")"))
             )
         )
         emailField.click()
@@ -178,7 +196,8 @@ class PaymentAppUITest {
 
         val amountField = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Amount\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Amount\")"))
             )
         )
         amountField.click()
@@ -186,14 +205,16 @@ class PaymentAppUITest {
 
         val sendButton = wait.until(
             ExpectedConditions.elementToBeClickable(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Send Payment\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"Send Payment\")"))
             )
         )
         sendButton.click()
 
         val amountError = wait.until(
             ExpectedConditions.visibilityOf(
-                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Amount must be greater than zero\")"))
+                driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().textContains(\"Amount must be greater than zero\")"))
             )
         )
         assertTrue("Amount validation error should be displayed", amountError.isDisplayed)
