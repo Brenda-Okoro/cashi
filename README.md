@@ -33,7 +33,7 @@ bash ./gradlew testDebugUnitTest --tests "*.PaymentAppUITest" or run directly fr
 ## BDD Tests
 bash ./gradlew testDebugUnitTest --tests "*.PaymentTestSuite" or run directly from the class
 ## UI Tests (Appium)
-- Start Appium server
+## Start Appium server
 bash appium
 ## Run tests
 ./gradlew :androidApp:connectedAndroidTest
