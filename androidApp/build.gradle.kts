@@ -51,6 +51,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            all {
+                it.useJUnitPlatform()
+            }
+        }
+    }
 }
 
 dependencies {
@@ -89,4 +98,16 @@ dependencies {
     // Debug tools
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // Cucumber dependencies
+    testImplementation("io.cucumber:cucumber-java:7.14.0")
+    testImplementation("io.cucumber:cucumber-junit-platform-engine:7.14.0")
+
+    // Kotest dependencies
+    testImplementation("io.kotest:kotest-runner-junit5:5.7.2")
+    testImplementation("io.kotest:kotest-assertions-core:5.7.2")
+
+    // JUnit Platform
+    testImplementation("org.junit.platform:junit-platform-suite:1.9.3")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
 }
