@@ -1,4 +1,4 @@
-package com.example.cashi
+package com.example.cashi.unit
 
 import com.example.cashi.data.models.PaymentRequest
 import com.example.cashi.domain.validator.PaymentValidator

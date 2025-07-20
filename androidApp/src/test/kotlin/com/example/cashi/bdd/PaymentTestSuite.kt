@@ -1,4 +1,4 @@
-package com.example.cashi
+package com.example.cashi.bdd
 
 import io.cucumber.junit.platform.engine.Constants
 import org.junit.platform.suite.api.ConfigurationParameter

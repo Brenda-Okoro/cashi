@@ -1,4 +1,4 @@
-package com.example.cashi
+package com.example.cashi.ui
 
 import io.appium.java_client.AppiumBy
 import io.appium.java_client.android.AndroidDriver
