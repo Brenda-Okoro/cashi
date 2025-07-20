@@ -15,7 +15,7 @@ Add your google-services.json to androidApp/
 
 
 ## Install dependencies
-bash./gradlew build
+bash ./gradlew build
 
 ## Start the mock API server
 bash cd backend
@@ -30,7 +30,7 @@ bash ./gradlew :androidApp:installDebug
 ## Unit Tests
 bash ./gradlew testDebugUnitTest --tests "*.PaymentAppUITest" or run directly from the class
 ## BDD Tests
-bash./gradlew testDebugUnitTest --tests "*.PaymentTestSuite" or run directly from the class
+bash ./gradlew testDebugUnitTest --tests "*.PaymentTestSuite" or run directly from the class
 ## UI Tests (Appium)
 ## Start Appium server
 bash appium
