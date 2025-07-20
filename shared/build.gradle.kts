@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.10"
 }
 
 kotlin {
@@ -11,7 +12,7 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -26,19 +27,25 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.ktor.serialization.kotlinx.json)
+                implementation(libs.kotlinx.coroutines.core)
+                implementation(libs.kotlinx.datetime)
+                implementation(libs.kotlinx.serialization.json)
+                implementation(libs.koin.core)
             }
         }
         val commonTest by getting {
             dependencies {
+                implementation("org.jetbrains.kotlin:kotlin-test:1.9.10")
                 implementation(kotlin("test"))
             }
         }
         val androidMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-                implementation("com.google.firebase:firebase-firestore-ktx:24.8.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+                implementation(libs.ktor.client.okhttp)
+                implementation(libs.firebase.firestore.ktx.v2471)
             }
         }
     }
